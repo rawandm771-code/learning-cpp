@@ -1,0 +1,30 @@
+
+#include <iostream>
+#include<string>
+using namespace std;
+string read() {
+    string s;
+    cout << "enter string?\n";
+    getline(cin, s);
+    return s;
+}
+void printEachWord(string s) {
+    string delim = " ";
+    int pos = 0;
+    string sword;
+    while ((pos = s.find(delim)) != std::string::npos) {
+        sword = s.substr(0, pos);
+        if (sword != "") {
+            cout << sword << endl;
+
+        }
+        s.erase(0, pos + delim.length());
+    }
+    if (s != " ") {
+        cout << s << endl;
+    }
+}
+int main()
+{
+    printEachWord(read());
+}
